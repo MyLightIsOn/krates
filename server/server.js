@@ -2,8 +2,8 @@
 // ============
 
 var Config =  global.Config = require('./config/config.js').config;
-    express = require('express'),
-    http =    require('http'),
+    express = require("express"),
+    http =    require("http"),
     port =    ( process.env.PORT || Config.listenPort ),
     server =  module.exports = express(),
     mongoose =     require('mongoose'),
@@ -31,7 +31,7 @@ var schema = require('./schemas/schema');
 
 server.configure(function() {
 
-  server.use(express['static'](__dirname + '/../public'));
+  server.use(express["static"](__dirname + "/../public"));
 
   server.use(express.errorHandler({
 

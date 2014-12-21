@@ -1,22 +1,22 @@
 {
-  "name": "krates",
+  "name": "Krates",
   "description": "Built with theStack!",
   "version": "0.0.1",
-  "homepage": "https://github.com/MyLightIsOn/krates",
+  "homepage": "https://github.com/MyLightIsOn/Krates",
   "author": {
     "name": "Lawrence",
     "url": "https://github.com/MyLightIsOn"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:MyLightIsOn/krates.git"
+    "url": "git@github.com:MyLightIsOn/Krates.git"
   },
-  "homepage": "https://MyLightIsOn.github.io/krates",
+  "homepage": "https://MyLightIsOn.github.io/Krates",
   "keywords": [
     "generator-thestack"
   ],
   "bugs": {
-    "url": "https://github.com/MyLightIsOn/krates/issues"
+    "url": "https://github.com/MyLightIsOn/Krates/issues"
   },
   "main": "./server/server",
   "dependencies": {
