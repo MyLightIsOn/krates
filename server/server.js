@@ -1,12 +1,13 @@
 // DEPENDENCIES
 // ============
 
-var Config =  global.Config = require('./config/config.js').config;
+var Config =  global.Config = require('./config/config.js').config,
     express = require("express"),
+    bodyParser = require('body-parser'),
     http =    require("http"),
     port =    ( process.env.PORT || Config.listenPort ),
     server =  module.exports = express(),
-    mongoose =     require('mongoose'),
+    mongoose = require('mongoose'),
     API =     require('./API');
 
 // DATABASE CONFIGURATION
@@ -29,27 +30,20 @@ var schema = require('./schemas/schema');
 // SERVER CONFIGURATION
 // ====================
 
-server.configure(function() {
+server.use(express["static"](__dirname + "/../public"));
 
-  server.use(express["static"](__dirname + "/../public"));
-
-  server.use(express.errorHandler({
-
+server.use(express.errorHandler({
     dumpExceptions: true,
-
     showStack: true
-
   }));
 
-  server.use(express.bodyParser());
+server.use(bodyParser.json());
 
-  server.use(express.cookieParser());
+server.use(express.session({ secret: Config.sessionSecret }));
 
-  server.use(express.session({ secret: Config.sessionSecret }));
+server.use(server.router);
 
-  server.use(server.router);
 
-});
 
 // API
 // ===
