@@ -1,12 +1,16 @@
 // API
 // ===
 
-module.exports.api = function(server, schema) {
+module.exports.api = function(server, Song) {
 
 	// Sample Rest Call
 
-	server.get('/hello', function(req, res){
-		res.send('<h1>Hello World!</h1>');
+	server.get('/test', function(req, res){
+        var silence = new Song(
+            { artist: 'Lawrence' }
+        );
+
+		res.send(silence.albumImage);
 	});
 
-}
+};

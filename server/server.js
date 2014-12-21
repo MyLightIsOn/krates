@@ -25,7 +25,7 @@ db.once('open', function callback () {
 // DATABASE SCHEMAS
 // ================
 
-var schema = require('./schemas/schema');
+var schema = require('./schemas/songSchema');
 
 // SERVER CONFIGURATION
 // ====================
