@@ -12,6 +12,7 @@ var songSchema = new Schema({
     title: {type: String, default: 'N/A'},
     artist: {type: [String], default: 'N/A'},
     album: {type: String, default: 'N/A'},
+    releaseDate: {type: String, default: 'N/A'},
     albumImage: {type: String, default: 'No Image'},
     genre: {type: [String], default: 'N/A'},
     length: {type: String, default: 'N/A'}

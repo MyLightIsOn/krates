@@ -6,6 +6,7 @@ var Config =  global.Config = require('./config/config.js').config,
     errorhandler = require("errorhandler"),
     exphbs = require("express-handlebars"),
     bodyParser = require('body-parser'),
+    multer = require('multer'),
     http =    require("http"),
     path = require('path'),
     port =    ( process.env.PORT || Config.listenPort ),
@@ -52,6 +53,8 @@ server.use(errorhandler({
 );
 
 server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+server.use(multer()); // for parsing multipart/form-data
 
 server.use(server.router);
 

@@ -1,16 +1,57 @@
-<br />
-<br />
-<br />
-<br />
-<div class="best plugin ever">
-    This is my {{ adjective }} template.
+<h1>Song Entry Form</h1>
 
-    {{! To include a partial: }}
-    {{! just provide the path to the partial without the extension }}
+<form aciton="/form" method="post">
+    <table>
+        <tr>
+            <td><label for="title">Title</label></td>
+            <td><input id="title" name="title"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="artist">Artist</label></td>
+            <td><input id="artist" name="artist"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="album">Album</label></td>
+            <td><input id="album" name="album"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="releaseDate">Release Date</label></td>
+            <td><input id="releaseDate" name="releaseDate"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="albumImage">Image</label></td>
+            <td><input id="albumImage" name="albumImage"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="genre">Genre</label></td>
+            <td><input id="genre" name="genre"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><label for="length">Length</label></td>
+            <td><input id="length" name="length"><br /><br /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button> </td>
+        </tr>
+    </table>
 
 
-    {{> testPartial}}
 
-</div>
 
-<div>This is the client side form</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
