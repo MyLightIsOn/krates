@@ -31,8 +31,7 @@ var schema = require('./schemas/songSchema');
 // ====================
 
 server.use(express["static"](__dirname + "/../public"));
-/*server.set('views', require('path').join(__dirname, '/../public/js/app/templates'));
-server.set('view engine', 'express-handlebars');*/
+
 
 server.use(express.errorHandler({
     dumpExceptions: true,

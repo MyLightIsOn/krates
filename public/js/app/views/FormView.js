@@ -1,10 +1,10 @@
 // IndexView.js
 
-define(["jquery", "backbone", "models/RecordModel", "hbs!templates/Form"],
+define(["jquery", "backbone", "models/RecordModel", "hbs!templates/Form", "hbs!templates/CoolPartial"],
 
     function($, Backbone, Model, template){
 
-        var RecordView = Backbone.View.extend({
+        var FormView = Backbone.View.extend({
 
             // The DOM Element associated with this view
             el: ".magic",
@@ -29,7 +29,7 @@ define(["jquery", "backbone", "models/RecordModel", "hbs!templates/Form"],
                 this.template = _.template(template, {});
 
                 // Dynamically updates the UI with the view's template
-                this.$el.html(this.template);
+                this.$el.html( template({adjective: "favorite"}));
 
                 // Maintains chainability
                 return this;
@@ -39,6 +39,6 @@ define(["jquery", "backbone", "models/RecordModel", "hbs!templates/Form"],
         });
 
         // Returns the View class
-        return RecordView;
+        return FormView;
     }
 );

@@ -1,8 +1,8 @@
 // Router.js
 
-define(["jquery", "backbone", "models/RecordModel", "views/RecordView", "collections/RecordCollection"],
+define(["jquery", "backbone", "models/RecordModel", "views/FormView", "views/RecordView", "collections/RecordCollection"],
 
-    function($, Backbone, Model, View, Collection) {
+    function($, Backbone, Model, FormView, View, Collection) {
 
         var Router = Backbone.Router.extend({
 
@@ -15,16 +15,18 @@ define(["jquery", "backbone", "models/RecordModel", "views/RecordView", "collect
 
             // All of your Backbone Routes (add more)
             routes: {
-
                 // When there is no hash on the url, the home method is called
-                "": "index"
+                "": "index",
+                "/form" : "form"
             },
 
             index: function() {
-
                 // Instantiates a new view which will render the header text to the page
-                new View();
+                new FormView();
+            },
 
+            form: function() {
+                new FormView();
             }
 
         });

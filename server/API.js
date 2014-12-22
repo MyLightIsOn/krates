@@ -1,17 +1,17 @@
 // API
 // ===
-var bodyParser = require('body-parser');
 
 module.exports.api = function(server, Song) {
-    /*server.use(bodyParser.json());*/
 
 	// Sample Rest Call
     server.get('/', function(req,res){
         res.send('/');
     });
 
-    server.post('/', function(req,res){
-        res.send(req.body);
+    server.get('/form', function(req,res){
+        res.render('form', function(err, html){
+            console.log('Form Page status: ' + res.statusCode);
+        });
     });
 
     server.get('/test', function(req, res){

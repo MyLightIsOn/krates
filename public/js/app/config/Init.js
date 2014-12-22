@@ -23,6 +23,8 @@ require.config({
 
       "handlebars" : "libs/handlebars/handlebars",
 
+      hbs: 'libs/require-handlebars-plugin/hbs',
+
       // Plugins
       // =======
 
@@ -62,6 +64,17 @@ require.config({
         // Exports the global window.Backbone object
         "exports": "Backbone"
 
+      },
+
+      'handlebars' : {
+          'exports' : 'Handlebars'
+      },
+
+      hbs: { // optional
+          helpers: true,            // default: true
+          i18n: false,              // default: false
+          templateExtension: 'hbs', // default: 'hbs'
+          partialsUrl: ''           // default: ''
       },
 
       // Backbone.validateAll plugin that depends on Backbone

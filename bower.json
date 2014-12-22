@@ -24,10 +24,12 @@
   "dependencies": {
     "backbone": "latest",
     "lodash": "latest",
+    "handlebars": "latest",
     "jquery": "latest",
     "requirejs": "latest",
     "text": "latest",
     "bootstrap": "latest",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "require-handlebars-plugin": "~0.11.2"
   }
 }
