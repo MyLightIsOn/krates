@@ -1,6 +1,6 @@
 // IndexView.js
 
-define(["jquery", "backbone", "models/RecordModel", "hbs!templates/Form"],
+define(["jquery", "backbone", "models/RecordModel", "text!templates/layouts/Record.html"],
 
     function($, Backbone, Model, template){
 

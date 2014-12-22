@@ -3,8 +3,11 @@
 
 var Config =  global.Config = require('./config/config.js').config,
     express = require("express"),
+    errorhandler = require("errorhandler"),
+    exphbs = require("express-handlebars"),
     bodyParser = require('body-parser'),
     http =    require("http"),
+    path = require('path'),
     port =    ( process.env.PORT || Config.listenPort ),
     server =  module.exports = express(),
     mongoose = require('mongoose'),
@@ -14,7 +17,7 @@ var Config =  global.Config = require('./config/config.js').config,
 // ======================
 
 // Connect to Database
-mongoose.connect('mongodb://' + Config.database.IP + ':' +Config.database.port + '/' + Config.database.name);
+mongoose.connect('mongodb://' + Config.database.IP + ':' + Config.database.port + '/' + Config.database.name);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
@@ -32,19 +35,25 @@ var schema = require('./schemas/songSchema');
 
 server.use(express["static"](__dirname + "/../public"));
 
+var hbs = exphbs.create({
+    partialsDir: [
+        './public/js/app/templates/partials'
+    ]
+});
 
-server.use(express.errorHandler({
+server.engine('handlebars', hbs.engine);
+server.set('view engine', 'handlebars');
+server.set('views', './public/js/app/templates/layouts');
+
+server.use(errorhandler({
     dumpExceptions: true,
     showStack: true
-  }));
+  })
+);
 
 server.use(bodyParser.json());
 
-server.use(express.session({ secret: Config.sessionSecret }));
-
 server.use(server.router);
-
-
 
 // API
 // ===
