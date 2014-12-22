@@ -12,13 +12,15 @@ require.config({
       // Core Libraries
       // ==============
 
-      "jquery": "libs/jquery/jquery",
+      "jquery": "libs/jquery/dist/jquery",
 
-      "lodash": "libs/lodash/lodash",
+      "lodash": "libs/lodash/dist/lodash",
 
       "backbone": "libs/backbone/backbone",
 
       "bootstrap": "libs/bootstrap/dist/js/bootstrap",
+
+      "underscore": "libs/underscore/underscore",
 
       "jasmine": "libs/jasmine/lib/jasmine-core/jasmine",
 
@@ -109,7 +111,7 @@ require(["jquery", "backbone", "jasmine-html", "backbone.validateAll"],
 
         jasmine.getEnv().execute();
 
-    
+
       });
 
     });

@@ -18,7 +18,6 @@ define(["jquery", "backbone", "models/RecordModel", "views/RecordView", "collect
 
                 // When there is no hash on the url, the home method is called
                 "": "index"
-
             },
 
             index: function() {

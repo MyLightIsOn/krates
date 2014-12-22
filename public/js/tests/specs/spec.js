@@ -5,7 +5,7 @@ define(["jquery", "backbone", "text!templates/Record.html", "views/RecordView", 
 
     function($, Backbone, template, View, Model, Collection, Router) {
 
-        // Test suite that includes all of the Jasmine unit tests   
+        // Test suite that includes all of the Jasmine unit tests
         describe("The Stack", function() {
 
             // Backbone View Suite: contains all tests related to views
@@ -111,7 +111,7 @@ define(["jquery", "backbone", "text!templates/Record.html", "views/RecordView", 
 
                 // Navigates to the default route
                 this.router.navigate("", { trigger: true });
-    
+
                 // Expects the Jasmine spy to have been called
                 expect(this.routeSpy).toHaveBeenCalled();
 

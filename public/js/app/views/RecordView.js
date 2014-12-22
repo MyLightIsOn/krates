@@ -1,6 +1,6 @@
 // IndexView.js
 
-define(["jquery", "backbone", "models/RecordModel", "text!templates/Record.html"],
+define(["jquery", "backbone", "models/RecordModel", "text!templates/Form.handlebars"],
 
     function($, Backbone, Model, template){
 
@@ -40,7 +40,5 @@ define(["jquery", "backbone", "models/RecordModel", "text!templates/Record.html"
 
         // Returns the View class
         return RecordView;
-
     }
-
 );

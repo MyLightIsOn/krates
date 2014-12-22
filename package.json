@@ -2,7 +2,7 @@
   "name": "Krates",
   "description": "Built with theStack!",
   "version": "0.0.1",
-  "homepage": "https://github.com/MyLightIsOn/Krates",
+  "homepage": "https://MyLightIsOn.github.io/Krates",
   "author": {
     "name": "Lawrence",
     "url": "https://github.com/MyLightIsOn"
@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git@github.com:MyLightIsOn/Krates.git"
   },
-  "homepage": "https://MyLightIsOn.github.io/Krates",
   "keywords": [
     "generator-thestack"
   ],
@@ -20,7 +19,8 @@
   },
   "main": "./server/server",
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "express-handlebars": "^1.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

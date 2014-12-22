@@ -21,6 +21,8 @@ require.config({
 
       "bootstrap": "libs/bootstrap/dist/js/bootstrap",
 
+      "handlebars" : "libs/handlebars/handlebars",
+
       // Plugins
       // =======
 
