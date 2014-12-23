@@ -7,8 +7,6 @@ define(["jquery", "backbone"],
         // Creates a new Backbone Model class object
         var RecordModel = Backbone.Model.extend({
 
-            url: '',
-
             // Model Constructor
             initialize: function() {
 

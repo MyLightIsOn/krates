@@ -2,9 +2,14 @@
 // ===
 
 module.exports.api = function(server, Song) {
-    server.get('/', function(req,res){
-        res.render('form');
-        console.log('Form page loaded. Satus:' + res.statusCode + 'on Home');
+    server.get('/songs', function(req,res){
+        Song.find(function(err, songs){
+            if(!err){
+                res.send(songs)
+            } else {
+                res.send(err)
+            }
+        });
     });
 
     server.get('/form', function(req,res){
