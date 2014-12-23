@@ -29,17 +29,17 @@
 
 <blockquote><p>You will have to install mongoDB if you dont have it installed already. <a href="http://docs.mongodb.org/manual/installation/">This is how you do it</a>.</p>
 
-<p>Once you are done with that you have to point your config file <code>server/config/config.js</code> at your mongoDB install.</p></blockquote>
+    <p>Once you are done with that you have to point your config file <code>server/config/config.js</code> at your mongoDB install.</p></blockquote>
 
 <pre><code>exports.config = {
     listenPort: "1337",
     sessionSecret: "keyboard-cat", // You should change this while you are here
     database: {
-        IP: "10.0.0.100",  // Put your mongoDB IP here (no http/ https)
-        name: "defaultDB" // Choose a name (the db will be created automatically)
-        port: "27017"    // 27017 is the default port.  Only change this if you specified a different port for your mongoDB install.
+    IP: "10.0.0.100",  // Put your mongoDB IP here (no http/ https)
+    name: "defaultDB" // Choose a name (the db will be created automatically)
+    port: "27017"    // 27017 is the default port.  Only change this if you specified a different port for your mongoDB install.
     }
-};
+    };
 </code></pre>
 
 <blockquote><p>That's it! You can now create schemas and persist your data. A schema generator is coming soon.</p></blockquote>
@@ -54,7 +54,7 @@
 
 <pre><code>define(["jquery", "backbone", "events/Notifier"],
 
-function($, Backbone, Notifier){ ...
+    function($, Backbone, Notifier){ ...
 </code></pre>
 
 <blockquote><p>Send the message</p></blockquote>
@@ -66,7 +66,7 @@ function($, Backbone, Notifier){ ...
 
 <pre><code>Notifier.on('myChannel.myMessage', function(optional, params){
     ...
-});
+    });
 </code></pre>
 
 <blockquote><p>Or even better! In your initialize method:</p></blockquote>
@@ -78,7 +78,7 @@ function($, Backbone, Notifier){ ...
 
 <pre><code>myFunction: function(optional, params) {
     …
-}, // Dont forget to chain your methods!
+    }, // Dont forget to chain your methods!
 </code></pre>
 
 <h2>THE WORKFLOW</h2>
@@ -92,35 +92,35 @@ function($, Backbone, Notifier){ ...
 <p>Server Side</p>
 
 <ul>
-<li><a href="http://expressjs.com/">Express</a></li>
-<li><a href="http://gruntjs.com/mo">Grunt</a></li>
-<li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
-<li><a href="http://requirejs.org/docs/optimization.html">r.js</a></li>
-<li><a href="https://github.com/ChrisWren/grunt-nodemon">Nodemon</a></li>
-<li><a href="http://www.mongodb.org/">MongoDB</a></li>
-<li><a href="http://mongoosejs.com/">Mongoose</a></li>
+    <li><a href="http://expressjs.com/">Express</a></li>
+    <li><a href="http://gruntjs.com/mo">Grunt</a></li>
+    <li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
+    <li><a href="http://requirejs.org/docs/optimization.html">r.js</a></li>
+    <li><a href="https://github.com/ChrisWren/grunt-nodemon">Nodemon</a></li>
+    <li><a href="http://www.mongodb.org/">MongoDB</a></li>
+    <li><a href="http://mongoosejs.com/">Mongoose</a></li>
 </ul>
 
 <p>Client Side</p>
 
 <ul>
-<li><a href="http://backbonejs.org/">Backbone.js</a></li>
-<li><a href="http://lodash.com/">Lodash</a></li>
-<li><a href="http://requirejs.org/">Require.js</a></li>
-<li><a href="https://github.com/jrburke/almond">Almond.js</a></li>
-<li><a href="http://jquery.com/">jQuery</a></li>
-<li><a href="http://pivotal.github.io/jasmine/">Jasmine</a></li>
-<li><a href="http://getbootstrap.com/">Bootstrap 3.0</a></li>
-<li><a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a></li>
+    <li><a href="http://backbonejs.org/">Backbone.js</a></li>
+    <li><a href="http://lodash.com/">Lodash</a></li>
+    <li><a href="http://requirejs.org/">Require.js</a></li>
+    <li><a href="https://github.com/jrburke/almond">Almond.js</a></li>
+    <li><a href="http://jquery.com/">jQuery</a></li>
+    <li><a href="http://pivotal.github.io/jasmine/">Jasmine</a></li>
+    <li><a href="http://getbootstrap.com/">Bootstrap 3.0</a></li>
+    <li><a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a></li>
 </ul>
 
 <h2>INSTALLATION</h2>
 
 <ol>
-<li>Download and install <a href="http://nodejs.org/#DOWNLOAD">Node.js</a></li>
-<li>Install Yeoman, Grunt and Bower: <code>npm install -g yo</code> (yes it downloads them all)</li>
-<li>Install Stacked: <code>npm install -g generator-stacked</code></li>
-<li>You're done!  Time to generate your first Stacked App.</li>
+    <li>Download and install <a href="http://nodejs.org/#DOWNLOAD">Node.js</a></li>
+    <li>Install Yeoman, Grunt and Bower: <code>npm install -g yo</code> (yes it downloads them all)</li>
+    <li>Install Stacked: <code>npm install -g generator-stacked</code></li>
+    <li>You're done!  Time to generate your first Stacked App.</li>
 </ol>
 
 
@@ -129,7 +129,7 @@ function($, Backbone, Notifier){ ...
 <p>Generate your app.</p>
 
 <pre><code>mkdir myApp &amp;&amp; cd $_
-yo stacked`
+    yo stacked`
 </code></pre>
 
 <p><img width="100%" align="right"  src="http://cl0udc0ntr0l.github.io/generator-stacked/img/questions.png" alt="Prompt"></p>
@@ -173,7 +173,7 @@ yo stacked`
 <h1>INITIALIZE THE BUILD</h1>
 
 <p>After you make your selections, your app will be generated and all dependencies will be installed. The console will log out how to initialize your build.
-<img width="100%" align="right"  src="http://cl0udc0ntr0l.github.io/generator-stacked/img/after-app.png" alt="After Creation"></p>
+    <img width="100%" align="right"  src="http://cl0udc0ntr0l.github.io/generator-stacked/img/after-app.png" alt="After Creation"></p>
 
 <h3>GRUNT INIT</h3>
 
@@ -182,10 +182,10 @@ yo stacked`
 <h6>BOOTSTRAP</h6>
 
 <p>The first thing the init task does is copy your bootstrap.css file from the bower install directory
-<code>public/js/libs/bootstrap/dist/css</code> to <code>public/css</code></p>
+    <code>public/js/libs/bootstrap/dist/css</code> to <code>public/css</code></p>
 
 <blockquote><p>Leverage!
-If you want to edit your bootstrap styles you could edit <code>public/css/bootsrap.css</code> or you can <code>cd public/js/libs/bootsrap/less</code> edit the less files and rebuild bootstrap, then <code>cd your/apps/root</code> and re-initialize your build to pull the new css into your <code>public/css</code> directory.</p></blockquote>
+    If you want to edit your bootstrap styles you could edit <code>public/css/bootsrap.css</code> or you can <code>cd public/js/libs/bootsrap/less</code> edit the less files and rebuild bootstrap, then <code>cd your/apps/root</code> and re-initialize your build to pull the new css into your <code>public/css</code> directory.</p></blockquote>
 
 <h6>AVAILABLE BOOTSTRAP GRUNT TASKS</h6>
 
@@ -234,21 +234,21 @@ If you want to edit your bootstrap styles you could edit <code>public/css/bootsr
 <h3>MODEL</h3>
 
 <p><code>yo stacked:model</code>
-<img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/model-generator.png" alt="" /></p>
+    <img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/model-generator.png" alt="" /></p>
 
 <p>The Model generator creates a Model and optionally, a collection</p>
 
 <h3>VIEW</h3>
 
 <p><code>yo stacked:view</code>
-<img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/view-generator.png" alt="" /></p>
+    <img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/view-generator.png" alt="" /></p>
 
 <p>The view generator creates a View and optionally, a Template. There is no template generator because it really wouldn't save any time.</p>
 
 <h3>MVC</h3>
 
 <p><code>yo stacked:mvc</code>
-<img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/mvc-generator.png" alt="" /></p>
+    <img width="100%" src="http://cl0udc0ntr0l.github.io/generator-stacked/img/mvc-generator.png" alt="" /></p>
 
 <p>The mvc generator creates a full set of backbone components, minus the Router.  You will have to include your new set in your existing Router manually (for now).</p>
 
@@ -257,9 +257,9 @@ If you want to edit your bootstrap styles you could edit <code>public/css/bootsr
 <blockquote><p>Stacked App structures are based on <a href="https://github.com/BoilerplateMVC/Backbone-Require-Boilerplate">Backbone-Require-Boilerplate</a> by <a href="https://github.com/gfranko">Greg Franko</a>, <a href="https://github.com/nickpack">Nick Pack</a> and <a href="https://github.com/brettjonesdev">Brett Jones</a>.</p></blockquote>
 
 <p>I have made some enhancements to the server side.
-- Abstracted an API file: <code>server/API.js</code> file for REST calls.
-- Abstracted enviornment specific variables into a config file <code>server/congif/config.js</code>
-- Added support for mocha</p>
+    - Abstracted an API file: <code>server/API.js</code> file for REST calls.
+    - Abstracted enviornment specific variables into a config file <code>server/congif/config.js</code>
+    - Added support for mocha</p>
 
 <p>Below is the documentation for <a href="https://github.com/BoilerplateMVC/Backbone-Require-Boilerplate">Backbone-Require-Boilerplate</a>.</p>
 
@@ -296,24 +296,24 @@ If you want to edit your bootstrap styles you could edit <code>public/css/bootsr
 <p>The Shim configuration allows you to easily include non-AMD compatible JavaScript files with Require.js (a separate library such as <a href="https://github.com/tbranyen/use.js/">Use.js</a> was previously needed for this).  This is very important, because Backbone versions > 0.5.3 no longer support AMD (meaning you will get an error if you try to use both Require.js and the latest version of Backbone).  This configuration is a much better solution than manually editing non-AMD compatible JavaScript files to make sure the code is wrapped in a <code>define</code> method.  Require.js creator <a href="http://tagneto.blogspot.com/">James Burke</a> previously maintained AMD compatible forks of both Backbone.js and Underscore.js because of this exact reason.</p>
 
 <p><code>js
-   shim: {
-      // Backbone
-      "backbone": {
-         // Depends on underscore/lodash and jQuery
-         "deps": ["underscore", "jquery"],
-         // Exports the global window.Backbone object
-         "exports": "Backbone"
-      },
-   }
+    shim: {
+    // Backbone
+    "backbone": {
+    // Depends on underscore/lodash and jQuery
+    "deps": ["underscore", "jquery"],
+    // Exports the global window.Backbone object
+    "exports": "Backbone"
+    },
+    }
 </code></p>
 
 <p>The Shim configuration also takes the place for the old Require.js <code>order</code> plugin.  Within the Shim configuration, you can list files and their dependency tree.  An example is jQuery plugins being dependent on jQuery:</p>
 
 <p><code>js
-   shim: {
-      // Twitter Bootstrap plugins depend on jQuery
-      "bootstrap": ["jquery"]
-   }
+    shim: {
+    // Twitter Bootstrap plugins depend on jQuery
+    "bootstrap": ["jquery"]
+    }
 </code></p>
 
 <blockquote><p>You do not need a shim configuration for <a href="http://www.jquery.com">jQuery</a> or <a href="https://github.com/bestiejs/lodash">lodash</a> because they are both AMD compatible.</p></blockquote>
@@ -353,10 +353,10 @@ If you want to edit your bootstrap styles you could edit <code>public/css/bootsr
 <p>Next, you will find an <code>events</code> object.  Here is where all of your View DOM event handlers associated with the HTML element referenced by your View's <code>el</code> property should be stored.  Keep in mind that Backbone is using the jQuery <code>delegate</code> method, so it expects a selector that is within your View's <code>el</code> property.  I did not include any events by default, so you will have to fill those in yourself.  Below is an example of having an events object with one event handler that calls a View's <code>someMethod()</code> method when an element with a class name of <em>someElement</em> is clicked.</p>
 
 <p><code>js
-   // View Event Handlers
-   events: {
-      "click .someElement": "someMethod"
-   },
+    // View Event Handlers
+    events: {
+    "click .someElement": "someMethod"
+    },
 </code></p>
 
 <p>I am also declaring a <code>render</code> method within the View.  Backbone expects you to override the <code>render</code> method with your own functionality, so that is what I did.  All my <code>render</code> method does is append the View's template to the page.</p>
@@ -438,63 +438,63 @@ If you want to edit your bootstrap styles you could edit <code>public/css/bootsr
 <p><code>0.1.5</code> - Sept 5, 2013</p>
 
 <ul>
-<li>Added Support for MongoDB &amp; Mongoose</li>
-<li>Added Event Aggregator (Notifier)</li>
-<li>Added Session Support</li>
-<li>Fixed Font-Awesome Import</li>
-<li>Fixed Bootstrap.js Include</li>
-<li>Various Minor Bug Fixes</li>
+    <li>Added Support for MongoDB &amp; Mongoose</li>
+    <li>Added Event Aggregator (Notifier)</li>
+    <li>Added Session Support</li>
+    <li>Fixed Font-Awesome Import</li>
+    <li>Fixed Bootstrap.js Include</li>
+    <li>Various Minor Bug Fixes</li>
 </ul>
 
 
 <p><code>0.1.4</code> - Sept 1, 2013</p>
 
 <ul>
-<li>Updated Yeoman Deps</li>
-<li>Removed Model Require from View Subgenerator</li>
+    <li>Updated Yeoman Deps</li>
+    <li>Removed Model Require from View Subgenerator</li>
 </ul>
 
 
 <p><code>0.1.3</code> - Aug 15, 2013</p>
 
 <ul>
-<li>Fixed Path Bug in Init Files</li>
+    <li>Fixed Path Bug in Init Files</li>
 </ul>
 
 
 <p><code>0.1.2</code> - Aug 14, 2013</p>
 
 <ul>
-<li>Fixed Path Bug in Subgenerators</li>
+    <li>Fixed Path Bug in Subgenerators</li>
 </ul>
 
 
 <p><code>0.1.1</code> - Aug 12, 2013</p>
 
 <ul>
-<li>Added Support for Initial Build MVC Set Path Selection</li>
+    <li>Added Support for Initial Build MVC Set Path Selection</li>
 </ul>
 
 
 <p><code>0.1.0</code> - Aug 11, 2013</p>
 
 <ul>
-<li>First Stable Release</li>
+    <li>First Stable Release</li>
 </ul>
 
 
 <h2>TODO</h2>
 
 <ul>
-<li>Automatate route creation and Require.js Includes in Existing Router</li>
-<li>Add Support for SASS</li>
-<li>Live Reload</li>
+    <li>Automatate route creation and Require.js Includes in Existing Router</li>
+    <li>Add Support for SASS</li>
+    <li>Live Reload</li>
 </ul>
 
 
 <h2>LICENSE</h2>
 
 <p>Copyright (c) 2013 Randy Lebeau
-Licensed under the <a href="https://github.com/cl0udc0ntr0l/generator-stacked/blob/master/LICENSE-MIT">MIT license</a>.</p>
+    Licensed under the <a href="https://github.com/cl0udc0ntr0l/generator-stacked/blob/master/LICENSE-MIT">MIT license</a>.</p>
 </div>
 <div class="clearfix" style="height:80px"></div>

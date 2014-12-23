@@ -49,6 +49,14 @@ require.config({
 
   },
 
+
+    hbs: { // optional
+        helpers: true,            // default: true
+        i18n: false,              // default: false
+        templateExtension: 'handlebars', // default: 'hbs'
+        partialsUrl: ''           // default: ''
+    },
+
   // Sets the configuration for your third party scripts that are not AMD compatible
   shim: {
 
@@ -68,13 +76,6 @@ require.config({
 
       'handlebars' : {
           'exports' : 'Handlebars'
-      },
-
-      hbs: { // optional
-          helpers: true,            // default: true
-          i18n: false,              // default: false
-          templateExtension: 'hbs', // default: 'hbs'
-          partialsUrl: ''           // default: ''
       },
 
       // Backbone.validateAll plugin that depends on Backbone

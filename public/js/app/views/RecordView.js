@@ -1,8 +1,8 @@
 // IndexView.js
 
-define(["jquery", "backbone", "models/RecordModel", "text!templates/layouts/Record.html"],
+define(["jquery", "backbone", "models/RecordModel", "text!templates/layouts/Record.html", "hbs!templates/layouts/RecordList"],
 
-    function($, Backbone, Model, template){
+    function($, Backbone, Model, template, RecordList){
 
         var RecordView = Backbone.View.extend({
 
@@ -26,7 +26,7 @@ define(["jquery", "backbone", "models/RecordModel", "text!templates/layouts/Reco
             render: function() {
 
                 // Setting the view's template property using the Underscore template method
-                this.template = _.template(template, {});
+                this.template = RecordList;
 
                 // Dynamically updates the UI with the view's template
                 this.$el.html(this.template);

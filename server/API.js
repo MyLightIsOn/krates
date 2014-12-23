@@ -2,6 +2,10 @@
 // ===
 
 module.exports.api = function(server, Song) {
+    server.get('/', function(req,res){
+        res.render('form');
+        console.log('Form page loaded. Satus:' + res.statusCode + 'on Home');
+    });
 
     server.get('/form', function(req,res){
         res.render('form');
