@@ -1,21 +1,21 @@
 // IndexCollection.js
 
-define(["jquery", "backbone", "models/RecordModel"],
-	function($, Backbone, Model) {
+define(["jquery", "backbone", "models/SongModel"],
+	function($, Backbone, SongModel) {
 
 		// Creates a new Backbone Collection class object
-		var RecordCollection = Backbone.Collection.extend({
+		var SongCollection = Backbone.Collection.extend({
             url: '/songs',
             parse: function(response) {
-                console.log(response);
+                return response
             },
 
 			// Tells the Backbone Collection that all of it's models will be of type Model (listed up top as a dependency)
-			model: Model
+			model: SongModel
 		});
 
 		// Returns the Model class
-		return RecordCollection;
+		return SongCollection;
 
 	}
 

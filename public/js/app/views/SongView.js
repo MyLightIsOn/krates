@@ -1,13 +1,11 @@
-// IndexView.js
+define(["jquery", "backbone", "models/SongModel", "hbs!templates/partials/Song"],
 
-define(["jquery", "backbone", "collections/RecordCollection", "hbs!templates/layouts/RecordList"],
+    function($, Backbone, SongModel, SongTemplate){
 
-    function($, Backbone, Collection, template){
-
-        var RecordView = Backbone.View.extend({
+        var SongView = Backbone.View.extend({
 
             // The DOM Element associated with this view
-            el: "#main-container",
+            el: ".song-item",
 
             // View constructor
             initialize: function() {
@@ -17,20 +15,12 @@ define(["jquery", "backbone", "collections/RecordCollection", "hbs!templates/lay
 
             },
 
-            // View Event Handlers
-            events: {
-
-            },
-
             // Renders the view's template to the UI
             render: function() {
-                var songs = new Collection();
-                songs.fetch(function(songs){
-                    console.log(songs)
-                });
+
 
                 // Setting the view's template property using the Underscore template method
-                this.template = template;
+                this.template = SongTemplate;
 
                 // Dynamically updates the UI with the view's template
                 this.$el.html(this.template);
@@ -43,6 +33,6 @@ define(["jquery", "backbone", "collections/RecordCollection", "hbs!templates/lay
         });
 
         // Returns the View class
-        return RecordView;
+        return SongView;
     }
 );

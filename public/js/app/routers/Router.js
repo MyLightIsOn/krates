@@ -1,8 +1,8 @@
 // Router.js
 
-define(["jquery", "backbone", "models/RecordModel", "views/RecordView", "collections/RecordCollection"],
+define(["jquery", "backbone", "models/SongModel", "views/SongListView", "views/SongView"],
 
-    function($, Backbone, Model, RecordView, Collection) {
+    function($, Backbone, SongModel, SongListView, SongView) {
 
         var Router = Backbone.Router.extend({
 
@@ -21,7 +21,8 @@ define(["jquery", "backbone", "models/RecordModel", "views/RecordView", "collect
 
             index: function() {
                 // Instantiates a new view which will render the header text to the page
-                new RecordView();
+                new SongListView();
+                new SongView();
             }
         });
 

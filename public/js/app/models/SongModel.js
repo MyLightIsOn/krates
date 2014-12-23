@@ -5,7 +5,11 @@ define(["jquery", "backbone"],
     function($, Backbone) {
 
         // Creates a new Backbone Model class object
-        var RecordModel = Backbone.Model.extend({
+        var SongModel = Backbone.Model.extend({
+            url: '/songs',
+            parse: function(response) {
+                return response
+            },
 
             // Model Constructor
             initialize: function() {
@@ -25,7 +29,7 @@ define(["jquery", "backbone"],
         });
 
         // Returns the Model class
-        return RecordModel;
+        return SongModel;
 
     }
 
