@@ -1,6 +1,6 @@
-define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList"],
+define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "datatables"],
 
-    function($, Backbone, SongCollection, SongList){
+    function($, Backbone, SongCollection, SongList, datatables){
 
         var SongListView = Backbone.View.extend({
 
@@ -17,6 +17,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
 
             // Renders the view's template to the UI
             render: function() {
+
                 var that = this,
                     songsList = new SongCollection();
 
@@ -26,6 +27,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 songsList.on('sync', function () {
                     console.log(this.models);
                     that.$el.html(that.template({songs: this.toJSON()}));
+                    $('#table_id').dataTable();
                 });
 
                 // Maintains chainability

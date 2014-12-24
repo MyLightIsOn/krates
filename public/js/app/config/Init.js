@@ -23,10 +23,12 @@ require.config({
 
       "handlebars" : "libs/handlebars/handlebars",
 
-      hbs: 'libs/require-handlebars-plugin/hbs',
+      "datatables" : "libs/datatables/datatables",
 
       // Plugins
       // =======
+
+      hbs: 'libs/require-handlebars-plugin/hbs',
 
       "backbone.validateAll": "libs/plugins/Backbone.validateAll",
 
@@ -73,6 +75,8 @@ require.config({
         "exports": "Backbone"
 
       },
+
+      "datatables": ['jquery'],
 
       'handlebars' : {
           'exports' : 'Handlebars'

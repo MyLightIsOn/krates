@@ -1,6 +1,20 @@
-<div class="col-md-8">
-    <p>Songs Here</p>
-    {{#each songs}}
-        {{> SongPartial}}
-    {{/each}}
-</div>
+<table id="table_id">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Label</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+            <th>Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each songs}}
+            {{> SongPartial}}
+        {{/each}}
+    </tbody>
+</table>
+

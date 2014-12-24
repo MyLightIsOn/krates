@@ -1,0 +1,25 @@
+/*Colors*/
+/*Fonts*/
+#left-container {
+  width: 300px;
+  height: 100%;
+  font-family: 'Questrial', sans-serif;
+  position: fixed;
+  left: 0;
+  background-color: #5e3294;
+  padding-top: 25px;
+}
+#left-container #left-interface {
+  width: 80%;
+  margin: 30px auto 0;
+}
+#left-container .album-view-toggle,
+#left-container .song-view-toggle {
+  width: 48%;
+  height: 40px;
+  border: 0;
+  text-align: center;
+}
+#left-container .album-view-toggle {
+  margin-right: 2%;
+}

@@ -7,7 +7,10 @@
     "name": "Lawrence",
     "url": "https://github.com/MyLightIsOn"
   },
-  "main": "server/server.js",
+  "main": [
+      "server/server.js",
+      "http://fonts.googleapis.com/css?family=Questrial",
+  ],
   "ignore": [
     "**/.*",
     "node_modules",

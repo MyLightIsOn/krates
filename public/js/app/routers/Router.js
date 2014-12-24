@@ -22,6 +22,7 @@ define(["jquery", "backbone", "models/SongModel", "views/SongListView", "views/S
             index: function() {
                 // Instantiates a new view which will render the header text to the page
                 new SongListView();
+                new SongView();
             }
         });
 
