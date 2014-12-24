@@ -1,6 +1,6 @@
 // IndexView.js
 
-define(["jquery", "backbone", "models/RecordModel", "hbs!templates/layouts/form", "hbs!templates/CoolPartial"],
+define(["jquery", "backbone", "models/RecordModel", "hbs!templates/layouts/form"],
 
     function($, Backbone, Model, template){
 

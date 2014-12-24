@@ -54,7 +54,7 @@ require.config({
         helpers: true,            // default: true
         i18n: false,              // default: false
         templateExtension: 'handlebars', // default: 'hbs'
-        partialsUrl: ''           // default: ''
+        partialsUrl: 'app/templates/partials'           // default: ''
     },
 
   // Sets the configuration for your third party scripts that are not AMD compatible

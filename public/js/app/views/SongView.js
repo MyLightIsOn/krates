@@ -1,4 +1,4 @@
-define(["jquery", "backbone", "models/SongModel", "hbs!templates/partials/Song"],
+define(["jquery", "backbone", "models/SongModel", "hbs!templates/partials/SongPartial"],
 
     function($, Backbone, SongModel, SongTemplate){
 
