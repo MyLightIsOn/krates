@@ -6,8 +6,8 @@
   position: relative;
 }
 #right-container #song-list-container {
-  width: 90%;
-  margin: auto;
+  width: 80%;
+  margin: 0 0 0 50px;
   padding-top: 20px;
   font-family: 'Questrial', sans-serif;
 }

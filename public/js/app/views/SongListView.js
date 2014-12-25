@@ -1,6 +1,6 @@
-define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "datatables"],
+define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "datatables"],
 
-    function($, Backbone, SongCollection, SongList, datatables){
+    function($, Backbone, SongCollection, SongList, GenreSortTemplate, GenreSort){
 
         var SongListView = Backbone.View.extend({
 
@@ -25,8 +25,18 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 songsList.fetch();
 
                 songsList.on('sync', function () {
+                    var sortedList = GenreSort(songsList);
+                    console.log(songsList);
+                    console.log(sortedList);
+
+                    //Sends returned Mongo response to browser for Handlebars
                     that.$el.html(that.template({songs: this.toJSON()}));
+
+                    //Creates table for data
                     $('#song-list-table').dataTable();
+
+                    //Adds the genre filter to the left
+                    $('#left-interface').append(GenreSortTemplate({genres: sortedList}));
                 });
 
                 // Maintains chainability

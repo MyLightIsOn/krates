@@ -1,8 +1,8 @@
 // Router.js
 
-define(["jquery", "backbone", "models/SongModel", "views/SongListView", "views/SongView"],
+define(["jquery", "backbone", "models/SongModel", "views/SongListView"],
 
-    function($, Backbone, SongModel, SongListView, SongView) {
+    function($, Backbone, SongModel, SongListView, GenreSortView) {
 
         var Router = Backbone.Router.extend({
 
