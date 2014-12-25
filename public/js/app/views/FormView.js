@@ -29,7 +29,7 @@ define(["jquery", "backbone", "models/RecordModel", "hbs!templates/layouts/form"
                 this.template = _.template(template, {});
 
                 // Dynamically updates the UI with the view's template
-                this.$el.html( template({adjective: "favorite"}));
+                this.$el.html( template());
 
                 // Maintains chainability
                 return this;

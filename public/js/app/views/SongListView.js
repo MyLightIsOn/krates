@@ -25,9 +25,8 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 songsList.fetch();
 
                 songsList.on('sync', function () {
-                    console.log(this.models);
                     that.$el.html(that.template({songs: this.toJSON()}));
-                    $('#table_id').dataTable();
+                    $('#song-list-table').dataTable();
                 });
 
                 // Maintains chainability
