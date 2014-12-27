@@ -1,8 +1,8 @@
-define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "datatables"],
+define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/AlbumList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "templates/helpers/AlbumSortHelper", "datatables"],
 
-    function($, Backbone, SongCollection, SongList, GenreSortTemplate, GenreSort){
+    function($, Backbone, SongCollection, AlbumList, GenreSortTemplate, GenreSort, AlbumSort){
 
-        var SongListView = Backbone.View.extend({
+        var AlbumListView = Backbone.View.extend({
 
             // The DOM Element associated with this view
             el: "#song-list-container",
@@ -23,20 +23,23 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 var that = this,
                     songsList = new SongCollection();
 
-                that.template = SongList;
+                that.template = AlbumList;
                 songsList.fetch();
 
                 songsList.on('sync', function () {
-                    var sortedList = GenreSort(songsList);
+                    var sortedList = GenreSort(songsList),
+                        albumList = AlbumSort(songsList);
+
 
                     //Sends returned Mongo response to browser for Handlebars
-                    that.$el.html(that.template({song: this.toJSON()}));
+                    that.$el.html(that.template({album: albumList}));
 
                     //Creates table for data
                     $('#song-list-table').dataTable();
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
+                    console.log(sortedList);
                 });
 
                 // Maintains chainability
@@ -47,6 +50,6 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
         });
 
         // Returns the View class
-        return SongListView;
+        return AlbumListView;
     }
 );

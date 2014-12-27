@@ -21,12 +21,63 @@
 
     .album-view-toggle, .song-view-toggle {
         width: 48%;
-        height: 40px;
+        display: inline-block;
 
+        padding: 9px 0;
+
+        background-color: @white;
+        font-weight: bold;
         border: 0;
         text-align: center;
+        text-decoration: none;
+    }
+
+    .album-view-toggle:hover, .song-view-toggle:hover {
+        background-color: @light-purple;
+        color: @white;
+        cursor: pointer;
     }
     .album-view-toggle {
         margin-right: 2%;
+    }
+
+    .album-view-toggle.selected, .song-view-toggle.selected {
+        color: @white;
+        background-color: @blue;
+    }
+
+    .song-view-toggle.selected:hover, .album-view-toggle.selected:hover {
+        background-color: @blue;
+    }
+
+    #genre-list-container {
+        margin-top: 20px;
+
+        color: @white;
+
+        .container-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        ul {
+            margin-top: 15px;
+        }
+    }
+
+    .genre-list li {
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .genre-list li:hover {
+        color: @light-purple;
+        text-decoration: underline;
+    }
+    .genre-list li.selected {
+        background-color: none;
+    }
+    .genre-list li.selected span{
+        color: @blue;
     }
 }

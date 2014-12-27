@@ -16,10 +16,54 @@
 #left-container .album-view-toggle,
 #left-container .song-view-toggle {
   width: 48%;
-  height: 40px;
+  display: inline-block;
+  padding: 9px 0;
+  background-color: #ffffff;
+  font-weight: bold;
   border: 0;
   text-align: center;
+  text-decoration: none;
+}
+#left-container .album-view-toggle:hover,
+#left-container .song-view-toggle:hover {
+  background-color: #b798dd;
+  color: #ffffff;
+  cursor: pointer;
 }
 #left-container .album-view-toggle {
   margin-right: 2%;
+}
+#left-container .album-view-toggle.selected,
+#left-container .song-view-toggle.selected {
+  color: #ffffff;
+  background-color: #1b9aff;
+}
+#left-container .song-view-toggle.selected:hover,
+#left-container .album-view-toggle.selected:hover {
+  background-color: #1b9aff;
+}
+#left-container #genre-list-container {
+  margin-top: 20px;
+  color: #ffffff;
+}
+#left-container #genre-list-container .container-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+#left-container #genre-list-container ul {
+  margin-top: 15px;
+}
+#left-container .genre-list li {
+  cursor: pointer;
+  list-style: none;
+}
+#left-container .genre-list li:hover {
+  color: #b798dd;
+  text-decoration: underline;
+}
+#left-container .genre-list li.selected {
+  background-color: none;
+}
+#left-container .genre-list li.selected span {
+  color: #1b9aff;
 }

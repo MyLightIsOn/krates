@@ -1,0 +1,16 @@
+<table id="song-list-table">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Album</th>
+        <th>Label</th>
+        <th>Release Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each album}}
+        {{> AlbumPartial}}
+    {{/each}}
+    </tbody>
+</table>
+

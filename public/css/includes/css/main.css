@@ -3,13 +3,9 @@
 html,
 body {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   position: relative;
   box-sizing: border-box;
-}
-body {
-  background: url('/img/record-store-bg.jpg') no-repeat;
-  background-size: cover;
 }
 *,
 *:before,
@@ -35,8 +31,11 @@ body {
   background-size: contain;
 }
 #main-container {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   margin-bottom: -44px;
+  background: url('/img/record-store-bg.jpg') no-repeat fixed;
+  background-size: cover;
   position: relative;
 }
 #record-list {
@@ -48,8 +47,8 @@ body {
 footer {
   width: 100%;
   height: 44px;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  z-index: 10;
   background-color: #cfc1df;
   padding: 10px 0;
   text-align: center;
@@ -59,18 +58,4 @@ footer {
   padding: 5px 10px;
   margin-bottom: 10px;
   font-size: 16px;
-}
-button {
-  font-weight: bold;
-}
-button:hover {
-  background-color: #b798dd;
-  cursor: pointer;
-}
-.selected {
-  color: #ffffff;
-  background-color: #1b9aff;
-}
-.selected:hover {
-  background-color: #1b9aff;
 }
