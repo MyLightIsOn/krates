@@ -1,7 +1,7 @@
 // DEPENDENCIES
 // ============
 
-var Config =  global.Config = require('./config/config.js').config,
+var Config =  global.Config = require('./config/config.js').config || process.env,
     express = require("express"),
     errorhandler = require("errorhandler"),
     exphbs = require("express-handlebars"),
@@ -18,12 +18,12 @@ var Config =  global.Config = require('./config/config.js').config,
 // ======================
 
 // Connect to Database
-mongoose.connect('mongodb://' + Config.database.IP + ':' + Config.database.port + '/' + Config.database.name);
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://' + Config.database.IP + ':' + Config.database.port + '/' + Config.database.name);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', function callback () {
-  console.log('Connected to ' + Config.database.name);
+    console.log('Connected to ' + Config.database.name || process.env.DB_NAME);
 });
 
 // DATABASE SCHEMAS
@@ -47,9 +47,9 @@ server.set('view engine', 'handlebars');
 server.set('views', './public/js/app/templates/layouts');
 
 server.use(errorhandler({
-    dumpExceptions: true,
-    showStack: true
-  })
+        dumpExceptions: true,
+        showStack: true
+    })
 );
 
 server.use(bodyParser.json());
