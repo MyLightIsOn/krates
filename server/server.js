@@ -1,7 +1,7 @@
 // DEPENDENCIES
 // ============
 
-var Config =  global.Config = require('./config/config.js').config || process.env,
+var Config =   global.Config = process.env || require('./config/config.js').config,
     express = require("express"),
     errorhandler = require("errorhandler"),
     exphbs = require("express-handlebars"),
