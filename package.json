@@ -1,41 +1,41 @@
 {
-  "name": "Krates",
-  "description": "Built with theStack!",
-  "version": "0.0.1",
-  "homepage": "https://MyLightIsOn.github.io/Krates",
-  "author": {
-    "name": "Lawrence",
-    "url": "https://github.com/MyLightIsOn"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:MyLightIsOn/Krates.git"
-  },
-  "keywords": [
-    "generator-thestack"
-  ],
-  "bugs": {
-    "url": "https://github.com/MyLightIsOn/Krates/issues"
-  },
-  "main": "./server/server",
-  "dependencies": {
-    "body-parser": "^1.10.0",
-    "errorhandler": "^1.3.0",
-    "express": "3.x",
-    "express-handlebars": "^1.1.0",
-    "multer": "^0.1.6"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-nodemon": "0.0.9",
-    "grunt-contrib-requirejs": "~0.4.0",
-    "grunt-contrib-jshint": "~0.3.0",
-    "grunt-shell": "~0.3.1",
-    "grunt-contrib-less": "~0.6.4",
-    "grunt-mocha-test": "~0.6.2",
-    "mongoose": "~3.6.19",
-    "superagent": "~0.15.4",
-    "expect.js": "~0.2.0",
-    "uglify-js": "~2.2.5"
-  }
+    "name": "Krates",
+    "description": "Record Catalog App",
+    "version": "0.0.1",
+    "homepage": "https://MyLightIsOn.github.io/Krates",
+    "author": {
+        "name": "Lawrence",
+        "url": "https://github.com/MyLightIsOn"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:MyLightIsOn/Krates.git"
+    },
+    "keywords": [
+        "generator-thestack"
+    ],
+    "bugs": {
+        "url": "https://github.com/MyLightIsOn/Krates/issues"
+    },
+    "main": "./server/server",
+    "dependencies": {
+        "body-parser": "^1.10.0",
+        "errorhandler": "^1.3.0",
+        "express": "3.x",
+        "express-handlebars": "^1.1.0",
+        "multer": "^0.1.6"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-nodemon": "0.0.9",
+        "grunt-contrib-requirejs": "~0.4.0",
+        "grunt-contrib-jshint": "~0.3.0",
+        "grunt-shell": "~0.3.1",
+        "grunt-contrib-less": "~0.6.4",
+        "grunt-mocha-test": "~0.6.2",
+        "mongoose": "~3.6.19",
+        "superagent": "~0.15.4",
+        "expect.js": "~0.2.0",
+        "uglify-js": "~2.2.5"
+    }
 }

@@ -23,7 +23,7 @@ require.config({
 
       "handlebars" : "libs/handlebars/handlebars",
 
-      "datatables" : "libs/datatables/datatables",
+      "datatables" : "libs/datatables/media/js/jquery.dataTables",
 
       // Plugins
       // =======

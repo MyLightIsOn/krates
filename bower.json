@@ -1,38 +1,39 @@
 {
-  "name": "Krates",
-  "description": "Built with theStack!",
-  "version": "0.0.1",
-  "homepage": "https://github.com/MyLightIsOn/Krates",
-  "author": {
-    "name": "Lawrence",
-    "url": "https://github.com/MyLightIsOn"
-  },
-  "main": [
-      "server/server.js",
-      "http://fonts.googleapis.com/css?family=Questrial",
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "public/js/libs",
-    "*.sublime-project",
-    "*sublime-workspace"
-  ],
-  "devDependencies": {
-    "almond": "latest",
-    "jasmine": "latest",
-    "rjs": "latest",
-    "jasmine-jquery": "latest"
-  },
-  "dependencies": {
-    "backbone": "latest",
-    "lodash": "latest",
-    "handlebars": "latest",
-    "jquery": "latest",
-    "requirejs": "latest",
-    "text": "latest",
-    "bootstrap": "latest",
-    "font-awesome": "latest",
-    "require-handlebars-plugin": "~0.11.2"
-  }
+    "name": "Krates",
+    "description": "Record Catalog App",
+    "version": "0.0.1",
+    "homepage": "https://github.com/MyLightIsOn/Krates",
+    "author": {
+        "name": "Lawrence",
+        "url": "https://github.com/MyLightIsOn"
+    },
+    "main": [
+        "server/server.js",
+        "http://fonts.googleapis.com/css?family=Questrial"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "public/js/libs",
+        "*.sublime-project",
+        "*sublime-workspace"
+    ],
+    "devDependencies": {
+        "almond": "latest",
+        "jasmine": "latest",
+        "rjs": "latest",
+        "jasmine-jquery": "latest"
+    },
+    "dependencies": {
+        "backbone": "latest",
+        "lodash": "latest",
+        "handlebars": "latest",
+        "jquery": "latest",
+        "requirejs": "latest",
+        "text": "latest",
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "require-handlebars-plugin": "~0.11.2",
+        "datatables": "~1.10.4"
+    }
 }
