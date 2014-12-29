@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://' + Config.database.IP +
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', function callback () {
-    console.log('Connected to ' + Config.database.name || process.env.DB_NAME);
+    console.log('Connected to ' + process.env.DB_NAME || Config.database.name);
 });
 
 // DATABASE SCHEMAS
