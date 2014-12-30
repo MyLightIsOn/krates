@@ -30,7 +30,6 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                     var sortedList = GenreSort(songsList),
                         albumList = AlbumSort(songsList);
 
-
                     //Sends returned Mongo response to browser for Handlebars
                     that.$el.html(that.template({album: albumList}));
 
@@ -39,7 +38,23 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
-                    console.log(sortedList);
+
+                    //Filters table by genre
+                    $('.genre').on('click', function(){
+                        var selectedGenre = this.innerHTML,
+                            genreAlbumList = {};
+
+                        for(var i = 0; i < albumList.length; ++i){
+                            if(albumList[i].genre == selectedGenre){
+                                genreAlbumList[i] = albumList[i]
+                            }
+                        }
+
+                        that.$el.html(that.template({album: genreAlbumList}));
+
+                        //Creates table for data
+                        $('#song-list-table').dataTable();
+                    });
                 });
 
                 // Maintains chainability

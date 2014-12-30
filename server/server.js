@@ -1,7 +1,7 @@
 // DEPENDENCIES
 // ============
 
-var Config =   global.Config = process.env || require('./config/config.js').config,
+var Config =   global.Config = /*process.env || */require('./config/config.js').config,
     express = require("express"),
     errorhandler = require("errorhandler"),
     exphbs = require("express-handlebars"),
@@ -18,12 +18,13 @@ var Config =   global.Config = process.env || require('./config/config.js').conf
 // ======================
 
 // Connect to Database
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://' + Config.database.IP + ':' + Config.database.port + '/' + Config.database.name);
+/*mongoose.connect(process.env.MONGOLAB_URI);  */                                                                   //Production
+mongoose.connect('mongodb://' + Config.database.IP + ':' + Config.database.port + '/' + Config.database.name);      //Development
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error:'));
 db.once('open', function callback () {
-    console.log('Connected to ' + process.env.DB_NAME || Config.database.name);
+    console.log('Connected to ' + /*process.env.DB_NAME ||*/ Config.database.name);
 });
 
 // DATABASE SCHEMAS

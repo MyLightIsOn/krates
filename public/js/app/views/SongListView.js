@@ -9,6 +9,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
 
             // View constructor
             initialize: function() {
+
                 //Clears genre list so it can be appended on render.
                 $('#genre-list-container').remove();
 
@@ -37,7 +38,26 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
+
+                    //Filters table by genre
+                    $('.genre').on('click', function(){
+                        var selectedGenre = this.innerHTML,
+                            genreAlbumList = {};
+
+                        for(var i = 0; i < songsList.length; ++i){
+
+                            if(songsList.models[i].attributes.genre == selectedGenre){
+                                genreAlbumList[i] = songsList.models[i].attributes
+                            }
+                        }
+
+                        that.$el.html(that.template({song: genreAlbumList}));
+
+                        //Creates table for data
+                        $('#song-list-table').dataTable();
+                    });
                 });
+
 
                 // Maintains chainability
                 return this;

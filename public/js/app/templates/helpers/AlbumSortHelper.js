@@ -3,7 +3,8 @@ define('templates/helpers/AlbumSortHelper', ['hbs/handlebars'], function ( Handl
         var albumList = [],
             labelList = [],
             releaseList = [],
-            imageList = [];
+            imageList = [],
+            genre = [];
 
         //Gets the album name, labe, and release date attribute for all songs in collection
         for(var i = 0; i < context.length; ++i){
@@ -11,6 +12,7 @@ define('templates/helpers/AlbumSortHelper', ['hbs/handlebars'], function ( Handl
             labelList.push(context.models[i].attributes.label.toString());
             releaseList.push(context.models[i].attributes.releaseDate.toString());
             imageList.push(context.models[i].attributes.albumImage.toString());
+            genre.push(context.models[i].attributes.genre.toString());
         }
 
         //Function to remove duplicates from list
@@ -33,6 +35,7 @@ define('templates/helpers/AlbumSortHelper', ['hbs/handlebars'], function ( Handl
                 myObj.label = label[i];
                 myObj.releaseDate = releaseDate[i];
                 myObj.albumImage = albumImage[i];
+                myObj.genre = genre[i];
 
                 newArray.push(myObj);
             }
@@ -44,8 +47,9 @@ define('templates/helpers/AlbumSortHelper', ['hbs/handlebars'], function ( Handl
         labelList = removeDups(labelList);
         releaseList = removeDups(releaseList);
         imageList = removeDups(imageList);
+        genre = removeDups(genre)
 
-        return toObject(albumList, labelList, releaseList, imageList);
+        return toObject(albumList, labelList, releaseList, imageList, genre);
     }
     Handlebars.registerHelper( 'albumSort', albumSort );
     return albumSort;
