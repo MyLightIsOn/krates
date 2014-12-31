@@ -55,6 +55,15 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         //Creates table for data
                         $('#song-list-table').dataTable();
                     });
+
+                    //Removes filter and resets view
+                    $('.all').on('click', function(){
+                        that.$el.html(that.template({album: albumList}));
+
+                        //Creates table for data
+                        $('#song-list-table').dataTable();
+
+                    });
                 });
 
                 // Maintains chainability
