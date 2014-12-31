@@ -19,8 +19,6 @@ require.config({
 
       "backbone": "libs/backbone/backbone",
 
-      "bootstrap": "libs/bootstrap/dist/js/bootstrap",
-
       "handlebars" : "libs/handlebars/handlebars",
 
       "datatables" : "libs/datatables/media/js/jquery.dataTables",
@@ -62,8 +60,6 @@ require.config({
   // Sets the configuration for your third party scripts that are not AMD compatible
   shim: {
 
-      // Bootstrap
-      "bootstrap": ["jquery"],
 
       // Backbone
       "backbone": {
@@ -90,7 +86,7 @@ require.config({
 });
 
 // Includes Desktop Specific JavaScript files here (or inside of your Desktop router)
-require(["jquery", "backbone", "routers/Router", "bootstrap", "backbone.validateAll"],
+require(["jquery", "backbone", "routers/Router", "backbone.validateAll"],
 
   function($, Backbone, Router) {
 

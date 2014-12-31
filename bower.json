@@ -31,7 +31,6 @@
         "jquery": "latest",
         "requirejs": "latest",
         "text": "latest",
-        "bootstrap": "latest",
         "font-awesome": "latest",
         "require-handlebars-plugin": "~0.11.2",
         "datatables": "~1.10.4"
