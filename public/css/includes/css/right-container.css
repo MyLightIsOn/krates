@@ -11,8 +11,28 @@
   padding-top: 20px;
   font-family: 'Questrial', sans-serif;
 }
-#right-container #song-list-table tr {
+#right-container #song-list-table {
+  line-height: 20px;
+}
+#right-container #song-list-table thead tr th:first-child {
+  background: none !important;
+  cursor: default;
+}
+#right-container #song-list-table thead th {
+  border-right: 1px solid #ffffff;
+}
+#right-container #song-list-table thead tr {
+  background-color: rgba(94, 50, 148, 0.9);
+  color: #ffffff;
+}
+#right-container #song-list-table tbody tr:nth-child(odd) {
   background: rgba(255, 255, 255, 0.9);
+}
+#right-container #song-list-table tbody tr:nth-child(even) {
+  background: rgba(183, 152, 221, 0.9);
+}
+#right-container #song-list-table tbody td {
+  border-right: 1px solid rgba(94, 50, 148, 0.3);
 }
 #right-container #song-list-table img {
   width: 50px;

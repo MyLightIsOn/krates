@@ -16,9 +16,32 @@
     }
 
     #song-list-table {
+        line-height: 20px;
 
-        tr {
+        thead tr th:first-child {
+            background: none !important;
+            cursor: default;
+        }
+
+        thead th {
+            border-right: 1px solid @white;
+        }
+
+        thead tr {
+            background-color: rgba(94, 50, 148, 0.9);
+            color: @white;
+        }
+
+        tbody tr:nth-child(odd) {
             background: rgba(255, 255, 255, 0.9);
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(183, 152, 221, 0.9);
+        }
+
+        tbody td {
+            border-right: 1px solid rgba(94, 50, 148, 0.3);
         }
 
         img {
