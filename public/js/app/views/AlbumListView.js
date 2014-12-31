@@ -26,6 +26,15 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 that.template = AlbumList;
                 songsList.fetch();
 
+                function createTable() {
+                    $('#song-list-table').dataTable({
+                        language: {
+                            search: "_INPUT_",
+                            searchPlaceholder: "Search your music"
+                        }
+                    });
+                }
+
                 songsList.on('sync', function () {
                     var sortedList = GenreSort(songsList),
                         albumList = AlbumSort(songsList);
@@ -34,7 +43,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                     that.$el.html(that.template({album: albumList}));
 
                     //Creates table for data
-                    $('#song-list-table').dataTable();
+                    createTable();
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
@@ -50,10 +59,15 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                             }
                         }
 
+                        //Adds arrow to selected genre
+                        $('.genre').removeClass('selected');
+                        $(this).addClass('selected');
+
+
                         that.$el.html(that.template({album: genreAlbumList}));
 
                         //Creates table for data
-                        $('#song-list-table').dataTable();
+                        createTable();
                     });
 
                     //Removes filter and resets view
@@ -61,7 +75,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         that.$el.html(that.template({album: albumList}));
 
                         //Creates table for data
-                        $('#song-list-table').dataTable();
+                        createTable();
 
                     });
                 });

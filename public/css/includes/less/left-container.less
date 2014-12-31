@@ -16,7 +16,7 @@
     #left-interface {
         width: 80%;
 
-        margin: 78px auto 0;
+        margin: 80px auto 0;
     }
 
     .album-view-toggle, .song-view-toggle {
@@ -74,10 +74,24 @@
         color: @light-purple;
         text-decoration: underline;
     }
-    .genre-list li.selected {
+    .genre-list span.selected {
+        position: relative;
+
         background-color: none;
-    }
-    .genre-list li.selected span{
         color: @blue;
+    }
+
+    .genre-list span.selected:after {
+        width: 0;
+        height: 0;
+
+        position: absolute;
+        top: 3px;
+        right: -18px;
+
+        content: '';
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 10px solid @blue;
     }
 }

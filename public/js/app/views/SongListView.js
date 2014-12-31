@@ -60,6 +60,10 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                             }
                         }
 
+                        //Adds arrow to selected genre
+                        $('.genre').removeClass('selected');
+                        $(this).addClass('selected');
+
                         that.$el.html(that.template({song: genreAlbumList}));
 
                         //Creates table for data
