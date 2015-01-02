@@ -26,8 +26,6 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 that.template = AlbumList;
                 songsList.fetch();
 
-                Events.createTable();
-
                 songsList.on('sync', function () {
                     var sortedList = GenreSort(songsList),
                         albumList = AlbumSort(songsList);
