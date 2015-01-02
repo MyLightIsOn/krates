@@ -1,6 +1,6 @@
-define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "datatables"],
+define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/SongList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "events/Events", "datatables"],
 
-    function($, Backbone, SongCollection, SongList, GenreSortTemplate, GenreSort){
+    function($, Backbone, SongCollection, SongList, GenreSortTemplate, GenreSort, Events){
 
         var SongListView = Backbone.View.extend({
 
@@ -27,14 +27,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 that.template = SongList;
                 songsList.fetch();
 
-                function createTable() {
-                    $('#song-list-table').dataTable({
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Search your music"
-                        }
-                    });
-                }
+
 
                 songsList.on('sync', function () {
                     var sortedList = GenreSort(songsList);
@@ -43,7 +36,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                     that.$el.html(that.template({song: this.toJSON()}));
 
                     //Creates table for data
-                    createTable();
+                    Events.createTable();
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
@@ -53,21 +46,12 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         var selectedGenre = this.innerHTML,
                             genreAlbumList = {};
 
-                        for(var i = 0; i < songsList.length; ++i){
-
-                            if(songsList.models[i].attributes.genre == selectedGenre){
-                                genreAlbumList[i] = songsList.models[i].attributes
-                            }
-                        }
+                        Events.filterByGenre(songsList, genreAlbumList, selectedGenre, that);
 
                         //Adds arrow to selected genre
                         $('.genre').removeClass('selected');
                         $(this).addClass('selected');
 
-                        that.$el.html(that.template({song: genreAlbumList}));
-
-                        //Creates table for data
-                        createTable();
                     });
 
                     //Removes filter and resets view
@@ -75,10 +59,9 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         that.$el.html(that.template({song: songsList.toJSON()}));
 
                         //Creates table for data
-                        createTable();
+                        Events.createTable();
                     });
                 });
-
 
                 // Maintains chainability
                 return this;

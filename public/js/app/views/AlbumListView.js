@@ -1,6 +1,6 @@
-define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/AlbumList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "templates/helpers/AlbumSortHelper", "datatables"],
+define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layouts/AlbumList", "hbs!templates/partials/GenreSortPartial", "templates/helpers/GenreSortHelper", "templates/helpers/AlbumSortHelper", "events/Events", "datatables"],
 
-    function($, Backbone, SongCollection, AlbumList, GenreSortTemplate, GenreSort, AlbumSort){
+    function($, Backbone, SongCollection, AlbumList, GenreSortTemplate, GenreSort, AlbumSort, Events){
 
         var AlbumListView = Backbone.View.extend({
 
@@ -26,14 +26,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                 that.template = AlbumList;
                 songsList.fetch();
 
-                function createTable() {
-                    $('#song-list-table').dataTable({
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Search your music"
-                        }
-                    });
-                }
+                Events.createTable();
 
                 songsList.on('sync', function () {
                     var sortedList = GenreSort(songsList),
@@ -43,7 +36,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                     that.$el.html(that.template({album: albumList}));
 
                     //Creates table for data
-                    createTable();
+                    Events.createTable();
 
                     //Adds the genre filter to the left
                     $('#left-interface').append(GenreSortTemplate({genre: sortedList}));
@@ -53,21 +46,11 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         var selectedGenre = this.innerHTML,
                             genreAlbumList = {};
 
-                        for(var i = 0; i < albumList.length; ++i){
-                            if(albumList[i].genre == selectedGenre){
-                                genreAlbumList[i] = albumList[i]
-                            }
-                        }
+                        Events.filterByAlbum(albumList, genreAlbumList, selectedGenre, that);
 
                         //Adds arrow to selected genre
                         $('.genre').removeClass('selected');
                         $(this).addClass('selected');
-
-
-                        that.$el.html(that.template({album: genreAlbumList}));
-
-                        //Creates table for data
-                        createTable();
                     });
 
                     //Removes filter and resets view
@@ -75,7 +58,7 @@ define(["jquery", "backbone", "collections/SongCollection", "hbs!templates/layou
                         that.$el.html(that.template({album: albumList}));
 
                         //Creates table for data
-                        createTable();
+                        Events.createTable();
 
                     });
                 });
